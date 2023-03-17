@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:movie_app/app/routes/app_pages.dart';
 import '../../../helpers/size_config.dart';
+import '../../../widgets/dot_indicator.dart';
+import '../../../data/models/onboard_model.dart';
 
 class OnboardView extends StatefulWidget {
   const OnboardView({Key? key}) : super(key: key);
@@ -98,57 +100,6 @@ class _OnboardViewState extends State<OnboardView> {
     );
   }
 }
-
-class DotIndicatior extends StatelessWidget {
-  const DotIndicatior({
-    super.key,
-    this.isActive = false,
-  });
-
-  final bool isActive;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
-      height: isActive ? 18 : 8,
-      width: 6,
-      decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor.withOpacity(isActive ? 1 : 0.5),
-        borderRadius: const BorderRadius.all(Radius.circular(12)),
-      ),
-    );
-  }
-}
-
-class Onboard {
-  final String image, title, description;
-
-  Onboard({
-    required this.image,
-    required this.title,
-    required this.description,
-  });
-}
-
-final List<Onboard> demoData = [
-  Onboard(
-    image: 'assets/images/onboarding_one.png',
-    title: 'Find your favorite movies in our application',
-    description:
-        'Many choices of movies from various genres that you can watch easily in our application.',
-  ),
-  Onboard(
-    image: 'assets/images/onboarding_one.png',
-    title: 'Find your favohofsoiahdof dshaoifho application',
-    description: 'dfdsfhoih sdfoih lication.',
-  ),
-  Onboard(
-    image: 'assets/images/onboarding_one.png',
-    title: 'Find yourioho cation',
-    description: 'Many dfysai ily in our application.',
-  )
-];
 
 class OnboardingContent extends StatelessWidget {
   const OnboardingContent({
