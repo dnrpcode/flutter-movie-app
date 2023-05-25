@@ -77,7 +77,8 @@ class HomeView extends GetView<HomeController> {
                               borderRadius: BorderRadius.circular(11.0),
                               child: FadeInImage.assetNetwork(
                                 placeholder: 'assets/images/onboarding_one.png',
-                                image: controller.movie[index]["Poster"],
+                                image: controller.movie.reversed.toList()[index]
+                                    ["Poster"],
                                 height: 243.0,
                                 width: 168.0,
                               ),
